@@ -64,8 +64,7 @@ moneyManager.sendMoneyCallback = (data) => {
 
 const favoritesWidget = new FavoritesWidget();
 
-favoritesWidget.getFavoritesCallback = () => {
-    ApiConnector.getFavorites (result => {
+ApiConnector.getFavorites (result => {
         if (result.success) {
             favoritesWidget.clearTable();
             favoritesWidget.fillTable(result.data);
@@ -73,7 +72,6 @@ favoritesWidget.getFavoritesCallback = () => {
         }
         
     })
-}
 
 favoritesWidget.addUserCallback = (userData) => {
     ApiConnector.addUserToFavorites(userData, (result) => {
